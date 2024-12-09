@@ -57,7 +57,6 @@ module.exports = {
         })
       ]
     }),
-    new BundleAnalyzerPlugin(),
   ],
   devServer: {
     static: path.resolve(__dirname, 'dist'),
