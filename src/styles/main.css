@@ -77,7 +77,7 @@ header {
   color: #333;
   margin-bottom: 20px;
   text-align: center;
-  border-bottom: 3px solid #007bff;
+  border-bottom: 3px solid #af2030;
   padding-bottom: 10px;
 }
 
@@ -158,12 +158,12 @@ header {
   margin-bottom: 15px;
   padding: 15px;
   border-radius: 8px;
-  border-left: 4px solid #007bff;
+  border-left: 4px solid #af2030;
 }
 
 .review p:first-child {
   font-weight: bold;
-  color: #007bff;
+  color: #af2030;
   margin-bottom: 5px;
 }
 
@@ -350,15 +350,15 @@ h2 {
 }
 
 .restaurant-info h3 {
-  color: #007bff;
+  color: #af2030;
   margin-top: 20px;
   font-size: 1.4rem;
-  border-bottom: 2px solid #007bff;
+  border-bottom: 2px solid #af2030;
   padding-bottom: 5px;
 }
 
 .restaurant-info h3 a {
-  color: #007bff;
+  color: #af2030;
   margin-top: 20px;
   font-size: 1.5rem;
   padding: 10px;
@@ -481,3 +481,45 @@ footer {
   padding: 10px;
 }
 
+/* Tambahkan di file CSS yang sesuai */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.no-favorites {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.empty-image {
+  max-width: 300px;
+  margin-bottom: 1rem;
+}
+
+.btn-explore, 
+.btn-retry {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-explore:hover,
+.btn-retry:hover {
+  background-color: #0056b3;
+}

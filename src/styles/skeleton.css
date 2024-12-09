@@ -1,0 +1,142 @@
+:root {
+  --skeleton-base-color: #e0e0e0;
+  --skeleton-light-color: #f0f0f0;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: var(--skeleton-base-color);
+  }
+  50% {
+    background-color: var(--skeleton-light-color);
+  }
+  100% {
+    background-color: var(--skeleton-base-color);
+  }
+}
+
+/* Restaurant List Skeleton */
+.restaurant-skeleton-card {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.skeleton-image {
+  width: 200px;
+  height: 150px;
+  border-radius: 8px;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+.skeleton-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skeleton-title {
+  height: 24px;
+  width: 60%;
+  border-radius: 4px;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+.skeleton-description .skeleton-text {
+  height: 16px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+.skeleton-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.skeleton-star {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+.skeleton-rating-text {
+  width: 80px;
+  height: 16px;
+  border-radius: 4px;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+/* Restaurant Detail Skeleton */
+.restaurant-detail-skeleton {
+  display: flex;
+  gap: 24px;
+}
+
+.skeleton-detail-image {
+  width: 50%;
+  height: 400px;
+  border-radius: 8px;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+.skeleton-detail-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.skeleton-detail-content .skeleton-title {
+  height: 36px;
+  width: 80%;
+}
+
+.skeleton-description .skeleton-text {
+  height: 16px;
+  margin-bottom: 8px;
+}
+
+.skeleton-info {
+  display: flex;
+  gap: 16px;
+}
+
+.skeleton-category, 
+.skeleton-location {
+  height: 24px;
+  width: 150px;
+  border-radius: 4px;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+.skeleton-menu-section {
+  margin-top: 24px;
+}
+
+.skeleton-menu-title {
+  height: 28px;
+  width: 200px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+.skeleton-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.skeleton-menu-item {
+  height: 100px;
+  border-radius: 8px;
+  animation: skeleton-loading 1.5s infinite;
+}

@@ -4,11 +4,14 @@ const createRestaurantItemTemplate = (restaurant) => `
   <div class="restaurant-card">
     <img src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" 
          alt="${restaurant.name}" 
-         class="restaurant-image">
+         class="restaurant-image"
+         loading="lazy"
+         width="300"
+         height="200">
     <div class="restaurant-info">
       <h3><a href="/#/detail/${restaurant.id}">${restaurant.name}</a></h3>
-      <p>📍 ${restaurant.city}</p>
-      <p>⭐️ ${restaurant.rating}</p>
+      <p> Address: ${restaurant.city}</p>
+      <p> Rating: ${restaurant.rating} ⭐</p>
       <p>${restaurant.description}</p>
     </div>
   </div>

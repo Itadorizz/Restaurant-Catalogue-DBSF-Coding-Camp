@@ -3,6 +3,9 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
+const ImageminMozjpeg = require('imagemin-mozjpeg');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   entry: {
@@ -22,6 +25,13 @@ module.exports = {
           'css-loader',
         ],
       },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'images/[name].[hash][ext]'
+        }
+      }
     ],
   },
   plugins: [
@@ -39,6 +49,15 @@ module.exports = {
         },
       ],
     }),
+    new ImageminWebpackPlugin({
+      plugins: [
+        ImageminMozjpeg({
+          quality: 70,
+          progressive: true
+        })
+      ]
+    }),
+    new BundleAnalyzerPlugin(),
   ],
   devServer: {
     static: path.resolve(__dirname, 'dist'),

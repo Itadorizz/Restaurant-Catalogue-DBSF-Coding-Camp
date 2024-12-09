@@ -6,6 +6,12 @@ import {
 
 const LikeButtonInitiator = {
   async init({ likeButtonContainer, restaurant }) {
+    // Tambahkan pengecekan untuk memastikan restaurant tidak undefined
+    if (!restaurant) {
+      console.error('Restaurant is undefined');
+      return;
+    }
+
     this._likeButtonContainer = likeButtonContainer;
     this._restaurant = restaurant;
 
@@ -13,6 +19,13 @@ const LikeButtonInitiator = {
   },
 
   async _renderButton() {
+    // Tambahkan pengecekan tambahan
+    if (!this._restaurant || !this._restaurant.id) {
+      console.error('Invalid restaurant object');
+      this._renderLike(); // Default ke tombol like
+      return;
+    }
+
     const { id } = this._restaurant;
 
     if (await this._isRestaurantExist(id)) {

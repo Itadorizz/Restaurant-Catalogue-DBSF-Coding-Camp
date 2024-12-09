@@ -13,7 +13,7 @@ class RestaurantSource {
     return responseJson.restaurant;
   }
 
-  static async searchRestaurants(query) {
+  static async searchRestaurant(query) {
     const response = await fetch(`${CONFIG.BASE_URL}/search?q=${query}`);
     const responseJson = await response.json();
     return responseJson.restaurants;

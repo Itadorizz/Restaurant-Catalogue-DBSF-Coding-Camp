@@ -43,12 +43,18 @@
 
     <div class="hero">
       <picture>
-        <img
-          src="/images/heros/hero-image_2.jpg"
-          alt="Hero image"
-          class="hero-image"
-        />
-      </picture>
+        <source media="(max-width: 768px)" 
+            srcset="/images/heros/optimized/hero-mobile.webp"
+            type="image/webp">
+    
+        <source media="(min-width: 769px)" 
+            srcset="/images/heros/optimized/hero-desktop.webp"
+            type="image/webp">
+    
+        <img src="/images/heros/hero-image_2.jpg" 
+         alt="Hero image" 
+         class="hero-image"
+         loading="lazy">
     </div>
 
     <main tabindex="0" id="mainContent">
